@@ -19,6 +19,8 @@ jobs:
         dotnet-version: 5.0.x
     - name: Change working dir
       run: cd src
+    - name: List directories
+      run: ls
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
