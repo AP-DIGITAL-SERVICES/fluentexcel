@@ -5,6 +5,8 @@
     <PackageProjectUrl>https://github.com/cristianocps/fluentexcel</PackageProjectUrl>
     <RepositoryUrl>https://github.com/cristianocps/fluentexcel</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.1</Version>
+    <Description></Description>
   </PropertyGroup>
 
   <ItemGroup>

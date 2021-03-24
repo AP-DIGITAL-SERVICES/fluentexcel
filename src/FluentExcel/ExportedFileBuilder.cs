@@ -183,7 +183,7 @@ namespace FluentExcel
             }
         }
 
-        private PropertyInfo GetPropertyFromExpression<T>(Expression<Func<T, object>> GetPropertyLambda)
+        private PropertyInfo GetPropertyFromExpression(Expression<Func<T, object>> GetPropertyLambda)
         {
             MemberExpression Exp = null;
 
