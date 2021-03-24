@@ -1,0 +1,34 @@
+name: Build, Test and Publish
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+  
+    runs-on: ubuntu-latest
+    env:
+      working-directory: ./src
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Restore dependencies
+      working-directory: ${{env.working-directory}}
+      run: dotnet restore
+    - name: Build
+      working-directory: ${{env.working-directory}}
+      run: dotnet build --configuration Release --no-restore
+    - name: Test
+      working-directory: ${{env.working-directory}}
+      run: dotnet test
+    - name: Publish to NuGet
+      uses: brandedoutcast/publish-nuget@v2
+      with:
+        PROJECT_FILE_PATH: ./src/FluentExcel/FluentExcel.csproj
+        VERSION_REGEX: '^\s*<Version>(.*)<\/Version>\s*$'
+        TAG_FORMAT: '*'
+        NUGET_KEY: ${{secrets.NUGET_TOKEN}}

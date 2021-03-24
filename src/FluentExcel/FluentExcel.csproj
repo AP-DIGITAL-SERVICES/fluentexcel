@@ -5,8 +5,9 @@
     <PackageProjectUrl>https://github.com/cristianocps/fluentexcel</PackageProjectUrl>
     <RepositoryUrl>https://github.com/cristianocps/fluentexcel</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageId>FluentExcel.NetStandard</PackageId>
     <Version>1.0.1</Version>
+    <Description></Description>
+    <PackageId>FluentExcel.NetStandard</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
